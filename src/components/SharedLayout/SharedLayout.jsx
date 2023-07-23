@@ -1,6 +1,15 @@
 import { Suspense } from "react";
-import { Outlet, Link } from "react-router-dom";
+import styled from "styled-components";
+import { Outlet, Link, NavLink } from "react-router-dom";
 import { Container, NavItem, NavList, Navigation } from './SharedLayout.module';
+
+const StyledLink = styled(NavLink)`
+  color: black;
+
+  &.active {
+    color: orange;
+  }
+`;
 
 const SharedLayout = () => {
     return(
@@ -9,10 +18,10 @@ const SharedLayout = () => {
                 <Navigation>
                     <NavList>
                         <NavItem>
-                        <Link to ='/'>Home</Link>
+                        <StyledLink to ='/'>Home</StyledLink>
                         </NavItem>
                         <NavItem>
-                            <Link to ='/movies'>Movies</Link>
+                            <StyledLink to ='/movies'>Movies</StyledLink>
                         </NavItem>
                     </NavList>
                 </Navigation>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { InputSearch, ButtonSearch } from './Form.module';
+import PropTypes from 'prop-types';
 
 const Form = ({setSearchParams} )=> {
     const [query, setQuery] = useState('');
@@ -27,4 +28,8 @@ const Form = ({setSearchParams} )=> {
         </form>
     );
 };
+Form.propTypes = {
+    setSearchParams: PropTypes.func.isRequired,
+  };
+  
 export default Form;
